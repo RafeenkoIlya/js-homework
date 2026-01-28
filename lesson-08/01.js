@@ -6,4 +6,18 @@
   Другой вариант - использовать метод split строк, и метод массива join.
 */
 
-function capitalizeWords() {}
+function capitalizeWords(str) {
+  // Разбиваем строку на массив слов по пробелам
+  const words = str.split(" ");
+
+  // Проходим по каждому слову с помощью цикла for
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > 0) {
+      // Делим слово на первую букву и остальные
+      words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+    }
+  }
+
+  // Собираем слова обратно в строку
+  return words.join(" ");
+}
